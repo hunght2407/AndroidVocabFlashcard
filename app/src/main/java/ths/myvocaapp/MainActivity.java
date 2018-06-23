@@ -5,10 +5,14 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.Settings;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -21,6 +25,9 @@ import java.util.LinkedList;
 import ths.myvocaapp.define.EVWord;
 import ths.myvocaapp.service.FloatingViewService;
 import ths.myvocaapp.storage.XmlHelper;
+
+import static android.Manifest.permission.RECORD_AUDIO;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 public class MainActivity extends Activity {
     private static final int CODE_DRAW_OVER_OTHER_APP_PERMISSION = 2084;
@@ -66,6 +73,11 @@ public class MainActivity extends Activity {
             wordListAdapter = new WordListAdapter(mSelf, _m_SharedPreferences, R.layout.layout_word_item, llWordList);
             wordListView.setAdapter(wordListAdapter);
             wordListView.setSelection(wordListAdapter.getPrefsIndex());
+        }
+
+        if (ContextCompat.checkSelfPermission(this, WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED
+                || ContextCompat.checkSelfPermission(this, RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{WRITE_EXTERNAL_STORAGE, RECORD_AUDIO}, 1000);
         }
     }
 
