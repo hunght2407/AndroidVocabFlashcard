@@ -9,7 +9,6 @@ import ths.myvocaapp.utility.FloatingViewManager;
 /**
  * Created by HungS7 on 1/26/2018.
  */
-
 public class FloatingViewService extends Service {
     private FloatingViewManager fviewManager;
 

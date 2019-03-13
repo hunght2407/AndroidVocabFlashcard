@@ -1,11 +1,11 @@
-package com.example.progress.json_reader;
+package ths.myvocaapp.define;
 
 import org.json.JSONObject;
 
 /**
  * Created by kstanoev on 1/14/2015.
  */
-interface AsyncResult
+public interface AsyncResult
 {
-    void onResult(JSONObject object);
+    public void onResult(JSONObject object);
 }

@@ -1,4 +1,4 @@
-package com.example.progress.json_reader;
+package ths.myvocaapp.define;
 
 import android.os.AsyncTask;
 

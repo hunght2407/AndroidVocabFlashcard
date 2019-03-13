@@ -17,15 +17,11 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import java.util.LinkedList;
 import java.util.Timer;
 import java.util.TimerTask;
 
 import ths.myvocaapp.MainActivity;
 import ths.myvocaapp.R;
-import ths.myvocaapp.define.EVWord;
-import ths.myvocaapp.service.FloatingViewService;
-import ths.myvocaapp.storage.XmlHelper;
 
 /**
  * Created by HungS7 on 1/26/2018.
